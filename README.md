@@ -32,11 +32,9 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 
 ## 4. Key Findings
 
--- -------------------------------------------------------------
--- Q1: MARKET CONCENTRATION
--- Which states drive the most orders and revenue?
--- Risk flag: over-reliance on a single state.
--- -------------------------------------------------------------
+Q1: MARKET CONCENTRATION
+### Which states drive the most orders and revenue?
+Risk flag: over-reliance on a single state.
 
 FINDING: São Paulo alone accounts for ~42% of all orders.
 The top 3 states (SP, RJ, MG) cover ~66% of volume — significant concentration risk.
