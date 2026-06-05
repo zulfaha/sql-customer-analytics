@@ -32,8 +32,8 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 
 ## 4. Key Findings
 
-Q1: MARKET CONCENTRATION
-### Which states drive the most orders and revenue?
+### Q1: MARKET CONCENTRATION
+Which states drive the most orders and revenue?
 
 FINDING: São Paulo alone accounts for ~42% of all orders.
 The top 3 states (SP, RJ, MG) cover ~66% of volume — significant concentration risk.
@@ -43,8 +43,8 @@ Risk flag: over-reliance on a single state.
 
 ---
 
-Q2: OPERATIONAL HEALTH — ORDER FAILURE RATE
-### What share of orders are canceled or unavailable?
+### Q2: OPERATIONAL HEALTH — ORDER FAILURE RATE
+What share of orders are canceled or unavailable?
 
 FINDING: 97% of orders reach "delivered" status.
 Cancellations (~0.6%) and unavailability (~0.6%) are low but worth monitoring.
