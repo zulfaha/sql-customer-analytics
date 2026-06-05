@@ -32,8 +32,47 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 
 ## 4. Key Findings
 
+### Finding 1: Extreme Geographic Concentration
+São Paulo (SP) and Rio de Janeiro (RJ) account for **53% of customers**. 
+The North region (Amapá, Roraima, Acre) represents **0.3%**.
+
+*Implication:* National marketing spend may be inefficient. Customer acquisition cost in low density regions is likely excessively high.
+
+*Limitation:* Describes concentration, not causation. Low counts may reflect logistics gaps, income demographics, or marketing absence.
+
+[Full query](/queries/query1.sql)
+
 ---
 
+### Finding 2: Order Pipeline is Healthy overall
+**96.5% delivered, 0.6% cancelled, 1.1% shipped, 1.8% processing.**
+
+*Implication:* The overall order pipeline looks strong.
+
+*Limitation:* Overall health masks trouble spots in individual categories. Cancellation 
+rate by product category gives a clearer view of where things go wrong, or if certain categories are struggling.
+
+[Full query](/queries/query2.sql)
+
+---
+
+### Finding 3: Delivery Timestamps Cannot Measure True Logistics
+
+Attempted to calculate delivery days by state. Result: **0.26 days (6.2 hours)** 
+for "delivered" orders whci is not possible for e-commerce.
+
+*Root cause:* Timestamps measure system status transitions, not physical delivery. 
+`order_delivered_customer_date` marks system closure, not package arrival.
+
+*Decision:* Abandoned delivery time as primary metric. Retained seller handoff 
+speed as secondary operational indicator with limited relevance.
+
+*Recommendation:* For true delivery analysis, Olist requires carrier tracking 
+APIs (GPS, delivery confirmation, customer signatures).
+
+[Investigation query](/queries/query3_delivery_investigation.sql)
+
+---
 ## 5. Recommendations
 
 ---
