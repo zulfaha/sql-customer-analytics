@@ -1,3 +1,4 @@
+   
 -- Query 1: Customer Distribution by State
 -- Business Question: Which states drive the most orders and revenue?
 -- Tables: orders,customers, payments,
