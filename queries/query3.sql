@@ -1,3 +1,8 @@
+-- Query 3: Average Delivery Time by State
+-- Business Question: Does delivery performance vary by geography?
+-- Tables used: orders, customers
+-- Limitation: Does not prove delivery time causes churn
+
 SELECT 
     order_status,
     COUNT(*) AS order_count,
