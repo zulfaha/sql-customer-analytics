@@ -1,6 +1,7 @@
-
-
-
+-- Query 2: Customer Distribution by State
+-- Business Question: What share of orders are canceled or unavailable?
+-- Tables: orders
+-- Techniques: GROUP BY, COUNT,ORDER BY, OVER()
 
 SELECT 
     order_status,
