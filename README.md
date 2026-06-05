@@ -1,7 +1,7 @@
 
 # SQL Customer Analytics: Brazilian E-Commerce
 
-## 1. Executive Summary
+## 1. Summary
 Analysis of 99,441 customers, 112,650 order items, and 103,886 payments from 
 the Brazilian Olist platform. Identified geographic concentration risks, delivery 
 performance gaps, and revenue drivers. Full technical documentation available in 
@@ -34,22 +34,21 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 
 Q1: MARKET CONCENTRATION
 ### Which states drive the most orders and revenue?
-Risk flag: over-reliance on a single state.
 
 FINDING: São Paulo alone accounts for ~42% of all orders.
 The top 3 states (SP, RJ, MG) cover ~66% of volume — significant concentration risk.
+Risk flag: over-reliance on a single state.
 
 [Full query](/queries/query1.sql)
 
 ---
 
-### Finding 2: Order Pipeline is Healthy overall
-**96.5% delivered, 0.6% cancelled, 1.1% shipped, 1.8% processing.**
+Q2: OPERATIONAL HEALTH — ORDER FAILURE RATE
+### What share of orders are canceled or unavailable?
 
-*Implication:* The overall order pipeline looks strong.
+FINDING: 97% of orders reach "delivered" status.
+Cancellations (~0.6%) and unavailability (~0.6%) are low but worth monitoring.
 
-*Limitation:* Overall health masks trouble spots in individual categories. Cancellation 
-rate by product category gives a clearer view of where things go wrong, or if certain categories are struggling.
 
 [Full query](/queries/query2.sql)
 
