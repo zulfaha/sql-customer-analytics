@@ -32,13 +32,14 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 
 ## 4. Key Findings
 
-### Finding 1: Extreme Geographic Concentration
-São Paulo (SP) and Rio de Janeiro (RJ) account for **53% of customers**. 
-The North region (Amapá, Roraima, Acre) represents **0.3%**.
+-- -------------------------------------------------------------
+-- Q1: MARKET CONCENTRATION
+-- Which states drive the most orders and revenue?
+-- Risk flag: over-reliance on a single state.
+-- -------------------------------------------------------------
 
-*Implication:* National marketing spend may be inefficient. Customer acquisition cost in low density regions is likely excessively high.
-
-*Limitation:* Describes concentration, not causation. Low counts may reflect logistics gaps, income demographics, or marketing absence.
+FINDING: São Paulo alone accounts for ~42% of all orders.
+The top 3 states (SP, RJ, MG) cover ~66% of volume — significant concentration risk.
 
 [Full query](/queries/query1.sql)
 
