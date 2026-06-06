@@ -63,6 +63,15 @@ The same northern states from Finding 1 had the lowest orders, long delivery tim
 [Full query](/queries/query3.sql)
 
 ---
+
+### Q4: ON-TIME DELIVERY & PROMISE ACCURACY
+
+Finding: **20+ states show **100% on-time rates**, with deliveries arriving **20–46 days earlier** than the promised date. It seems Olist deliberately delays estimates to protect satisfaction scores rather than reflect realistic timelines.
+
+[Full query](/queries/query4.sql)
+
+---
+
 ## 5. Recommendations
 
 ---
