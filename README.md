@@ -19,7 +19,7 @@ Source: [Kaggle - Brazilian E-Commerce Public Dataset by Olist](https://www.kagg
 **Questions investigated:**
 1. **Market concentration:** Where are our customers? Are we over-dependent on one region?
 2. **Operational health:** What percentage of orders fail, and why?
-3. **Logistics performance:** Does delivery time vary by geography, and what does it cost us?
+3. **Logistics performance:** Does delivery time vary by geography?
 4. **Revenue drivers:** Which product categories actually make money?
 5. **Customer loyalty:** Do customers come back, and what predicts retention?
 
@@ -54,21 +54,13 @@ Cancellations (~0.6%) and unavailability (~0.6%) are low but worth monitoring.
 
 ---
 
-### Finding 3: Delivery Timestamps Cannot Measure True Logistics
+### Q3: DELIVERY PERFORMANCE
 
-Attempted to calculate delivery days by state. Result: **0.26 days (6.2 hours)** 
-for "delivered" orders whci is not possible for e-commerce.
+FINDING: SP averages **8 days** transit at **R$15** freight
+Northern states (RR, AP, AM) average **26+ days** at **R$35–43** freight
+The same northern states from Finding 1 had the lowest orders, long delivery times and high freight costs   which are likely lowering demand. 
 
-*Root cause:* Timestamps measure system status transitions, not physical delivery. 
-`order_delivered_customer_date` marks system closure, not package arrival.
-
-*Decision:* Abandoned delivery time as primary metric. Retained seller handoff 
-speed as secondary operational indicator with limited relevance.
-
-*Recommendation:* For true delivery analysis, Olist requires carrier tracking 
-APIs (GPS, delivery confirmation, customer signatures).
-
-[Investigation query](/queries/query3_delivery_investigation.sql)
+[Full query](/queries/query3.sql)
 
 ---
 ## 5. Recommendations
