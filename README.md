@@ -31,6 +31,7 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 ---
 
 ## 4. Key Findings
+> Full analysis, implications, and limitations in `analysis.pdf`
 
 ### Q1: MARKET CONCENTRATION
 Which states drive the most orders and revenue?
