@@ -59,7 +59,7 @@ Cancellations (~0.6%) and unavailability (~0.6%) are low but worth monitoring.
 
 FINDING: SP averages **8 days** transit at **R$15** freight
 Northern states (RR, AP, AM) average **26+ days** at **R$35–43** freight
-The same northern states from Finding 1 had the lowest orders, long delivery times and high freight costs   which are likely lowering demand. 
+The same northern states from Finding 1 had the lowest orders, long delivery times and high freight costs which are likely lowering demand. 
 
 [Full query](/queries/query3.sql)
 
@@ -70,6 +70,14 @@ The same northern states from Finding 1 had the lowest orders, long delivery tim
 Finding: **20+ states show **100% on-time rates**, with deliveries arriving **20–46 days earlier** than the promised date. It seems Olist deliberately delays estimates to protect satisfaction scores rather than reflect realistic timelines.
 
 [Full query](/queries/query4.sql)
+
+---
+
+### Q5: REVENUE BY PRODUCT CATEGORY 
+
+Finding: Beauty/health (`beleza_saude`) leads revenue at **R$1.25M** although its not the not  the highest volume category. Watches/gifts ('relogios_presentes') has the highest avg price at **R$200** but lower order volume. Most ordered category bed/bath ('cama_mesa_banho') only ranks 3rd in revenue, this implies that volume and revenue rankings do not align.
+
+[Full query](/queries/query5.sql)
 
 ---
 
@@ -93,6 +101,6 @@ Finding: **20+ states show **100% on-time rates**, with deliveries arriving **20
 
 ## Status
 - [x] Schema design
-- [x] Data loading (in progress)
-- [ ] Query writing
+- [x] Data loading 
+- [x] Query writing (in progress)
 - [ ] Analysis and insights
