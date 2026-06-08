@@ -2,9 +2,8 @@
 # SQL Customer Analytics: Brazilian E-Commerce
 
 ## 1. Summary
-Analysis of 99,441 customers, 112,650 order items, and 103,886 payments from 
-the Brazilian Olist platform. Identified geographic concentration risks, delivery 
-performance gaps, and revenue drivers. Full technical documentation available in 
+An exploratory SQL analysis of 99,000+ real Brazilian e-commerce orders from the Olist public dataset on Kaggle. The goal was to answer practical business questions a data analyst might actually be asked, covering customer geography, operations, logistics, revenue, and retention.
+All queries are written in PostgreSQL.
 [Appendix](#appendix) and [SQL files](/queries/).
 
 ## Dataset
@@ -17,11 +16,13 @@ Source: [Kaggle - Brazilian E-Commerce Public Dataset by Olist](https://www.kagg
 **Company:** Olist (São Paulo-based e-commerce marketplace, 2016–2018 data)
 
 **Questions investigated:**
-1. **Market concentration:** Where are our customers? Are we over-dependent on one region?
-2. **Operational health:** What percentage of orders fail, and why?
-3. **Logistics performance:** Does delivery time vary by geography?
+1. **Market concentration:** Where are our customers actually based, and are we too dependent on one region?
+2. **Operational health:** What percentage of orders fail, and what's going wrong?
+3. **Logistics performance:** Does it take longer to deliver to certain states, and what does that cost?
 4. **Revenue drivers:** Which product categories actually make money?
-5. **Customer loyalty:** Do customers come back, and what predicts retention?
+5. **Customer loyalty:** Do customers come back, or are we essentially a one-time purchase business?
+6. **Payment Behaviour:** How are customers choosing to pay, and does the method tell us anything about order value?
+7. **Logistics Cost vs Delivery Reliability:** Does paying more for shipping actually get your order there faster, or is it just a geography problem?
 
 ---
 ## 3. Methodology
