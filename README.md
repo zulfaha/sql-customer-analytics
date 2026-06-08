@@ -75,7 +75,7 @@ Finding: **20+ states show **100% on-time rates**, with deliveries arriving **20
 
 ### Q5: REVENUE BY PRODUCT CATEGORY 
 
-Finding: Beauty/health (`beleza_saude`) leads revenue at **R$1.25M** although its not the not  the highest volume category. Watches/gifts ('relogios_presentes') has the highest avg price at **R$200** but lower order volume. Most ordered category bed/bath ('cama_mesa_banho') only ranks 3rd in revenue, this implies that volume and revenue rankings do not align.
+Finding: Beauty/health (`beleza_saude`) leads revenue at **R$1.25M** although its not the not  the highest volume category. Watches/gifts (`relogios_presentes`) has the highest avg price at **R$200** but lower order volume. Most ordered category bed/bath (`cama_mesa_banho`) only ranks 3rd in revenue, this implies that volume and revenue rankings do not align.
 
 [Full query](/queries/query5.sql)
 
