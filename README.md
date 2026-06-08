@@ -81,6 +81,15 @@ Finding: Beauty/health (`beleza_saude`) leads revenue at **R$1.25M** although it
 
 ---
 
+### Q6: CUSTOMER RETENTION
+
+Finding: **97%** of customers purchase only once, repeat buyers are very rare.
+This implies a significant retention problem; almost all revenue depends on acquiring new customers instead of returning ones.
+
+[Full query](/queries/query6.sql)
+
+---
+
 ## 5. Recommendations
 
 ---
