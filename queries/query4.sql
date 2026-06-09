@@ -1,8 +1,7 @@
 -- Query 4: On-Time Delivery Performance by State
 -- Business Question: Which states receive orders on time vs late, and by how much?
 -- Tables: orders, customers
--- Techniques: CASE WHEN (conditional counting), ::date subtraction,
---             ::numeric cast, percentage calculation, NULL filtering
+-- Techniques: CASE WHEN (conditional counting), ::date subtraction,::numeric cast, percentage calculation, NULL filtering
 -- Notes: avg_days_vs_promise is negative = early, positive = late
 --        CASE WHEN acts as a conditional counter (1 if true, 0 if false, SUM adds them up)
 
