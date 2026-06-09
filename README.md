@@ -93,6 +93,18 @@ This implies a significant retention problem; almost all revenue depends on acqu
 
 [Full query](/queries/query6.sql)
 
+--- 
+
+### Q7: PAYMENT BEHAVIOUR
+
+Finding: Credit card accounts for **75%** of orders at an avg order value of **R$163**.
+Boleto (Brazil's cash-based bank slip) represents **19%**, this shows a significant unbanked customer group. Voucher users spend less than half the avg credit card order (**R$65 vs R$163**), implies discount driven behaviour instead of demand.
+
+[Full query](/queries/query7.sql)
+
+---
+
+
 
 ---
 
