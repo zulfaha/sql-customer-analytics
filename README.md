@@ -57,6 +57,7 @@ What share of orders are canceled or unavailable?
 97% of orders reach "delivered" status.
 Cancellations (~0.6%) and unavailability (~0.6%) are low but worth monitoring.
 
+Techniques: GROUP BY, COUNT,ORDER BY, OVER()
 
 [Full query](/queries/query2.sql)
 
