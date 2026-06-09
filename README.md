@@ -3,7 +3,7 @@
 
 ## 1. Summary
 
-An exploratory SQL analysis of 99,000+ real Brazilian e-commerce orders [from the Olist public dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). My goal was to answer practical business questions a data analyst might actually be asked, covering customer geography, operations, logistics, revenue, and retention.
+Exploratory analysis of 99,000+ real Brazilian e-commerce orders [from the Olist public dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). I wrote this to answer the kind of questions a data analyst might actually get asked - where customers are, whats breaking, how logisitcs perform, where money comes from, and whether customers come back. 
 
 All queries are written in PostgreSQL.
 
@@ -11,7 +11,7 @@ All queries are written in PostgreSQL.
 
 ## Dataset
 
-The dataset covers orders placed on the Olist platform between 2016 and 2018. It includes customer location, order status, delivery timestamps, product categories, freight costs, and payment details across five tables: `orders`, `customers`, `order_items`, `payments`, and `products`.
+Orders placed on the Olist platform between 2016 and 2018. It includes customer location, order status, delivery timestamps, product categories, freight costs, and payment details across five tables: `orders`, `customers`, `order_items`, `payments`, and `products`.
 
 ---
 
@@ -20,18 +20,19 @@ The dataset covers orders placed on the Olist platform between 2016 and 2018. It
 **Company:** Olist (São Paulo-based e-commerce marketplace, 2016–2018 data)
 
 **Questions investigated:**
-1. **Market concentration:** Where are our customers actually based, and are we too dependent on one region?
-2. **Operational health:** What percentage of orders fail, and what's going wrong?
-3. **Logistics performance:** Does it take longer to deliver to certain states, and what does that cost?
-4. **Revenue drivers:** Which product categories actually make money?
-5. **Customer loyalty:** Do customers come back, or are we essentially a one-time purchase business?
-6. **Payment Behaviour:** How are customers choosing to pay, and does the method tell us anything about order value?
-7. **Logistics Cost vs Delivery Reliability:** Does paying more for shipping actually get your order there faster, or is it just a geography problem?
+1. **Market concentration:** Are we too dependent on one region?
+2. **Operational health:** How many orders fail, and why?
+3. **Logistics performance:** Which states get slow, expensive delivery?
+4. **On time accuracy:** Are delivery estimates honest or padded?
+5. **Revenue drivers:** Which product categories actually make money?
+6. **Customer loyalty:** Do customers come back?
+7. **Payment Behaviour:** How are customers choosing to pay, and does the method tell us anything about order value?
+8. **Logistics Cost vs Delivery Reliability:** Does expensive shipping actually arrive faster?
 
 ---
 ## 3. Methodology
-PostgreSQL database with 5 normalized tables, designed in pgAdmin 4, 
-queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagram](schema_diagram.png)
+PostgreSQL in pgAdmin 4, 5 normalized tables, queried with SQL (JOINs, CTEs, window functions).
+[Schema](schema.sql) | [Diagram](schema_diagram.png)
 
 ---
 
@@ -39,25 +40,21 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 > Full analysis, implications, and limitations in `analysis.pdf`
 
 ### Q1: MARKET CONCENTRATION
-Which states drive the most orders and revenue?
 
-São Paulo accounts for ~42% of all orders.
-The top 3 states (SP, RJ, MG) cover ~66% of orders this shows a significant concentration risk.
-Over-reliance on a single state is a factor that should be monitiored.
+São Paulo accounts for ~42% of all orders. The top 3 states (SP, RJ, MG) cover ~66% of orders thats a heavy concentration risk.
+If São Paulo sneezes, Olist catches a cold.
 
-Techniques: GROUP BY, COUNT,ROUND, OVER(), ORDER BY
+Techniques: GROUP BY,COUNT,ROUND,OVER(),ORDER BY
 
 [Full query](/queries/query1.sql)
 
 ---
 
-### Q2: OPERATIONAL HEALTH — ORDER FAILURE RATE
-What share of orders are canceled or unavailable?
+### Q2: ORDER FAILURE RATE
 
-97% of orders reach "delivered" status.
-Cancellations (~0.6%) and unavailability (~0.6%) are low but worth monitoring.
+97% delivered. Cancellations and unavailability are at (~0.6%) each. Low, but in a 99k order dataset thats 600 orders each. Its worth tracking whether those cluster by seller,category, or payment method.
 
-Techniques: GROUP BY, COUNT,ORDER BY, OVER()
+Techniques: GROUP BY,COUNT,ORDER BY,OVER()
 
 [Full query](/queries/query2.sql)
 
@@ -65,11 +62,10 @@ Techniques: GROUP BY, COUNT,ORDER BY, OVER()
 
 ### Q3: DELIVERY PERFORMANCE
 
-SP averages **8 days** transit at **R$15** freight
-Northern states (RR, AP, AM) average **26+ days** at **R$35–43** freight
-The same northern states from Finding 1 had the lowest orders, long delivery times and high freight costs which are likely lowering demand. 
+SP averages **8 days** transit at **R$15** freight. Northern states (RR, AP, AM) average **26+ days** at **R$35–43** freight
+Same northern states from query 1 had the lowest orders, long delivery times and high freight costs are likely lowering demand. 
 
-Techniques: DATE subtraction (::date),::numeric cast, AVG/MIN/MAX, GROUP BY, NULL filtering
+Techniques: DATE subtraction(::date),::numeric cast,AVG/MIN/MAX,GROUP BY,NULL filtering
 
 [Full query](/queries/query3.sql)
 
@@ -79,7 +75,7 @@ Techniques: DATE subtraction (::date),::numeric cast, AVG/MIN/MAX, GROUP BY, NUL
 
 **20+ states show **100% on-time rates**, with deliveries arriving **20–46 days earlier** than the promised date. It seems Olist deliberately delays estimates to protect satisfaction scores rather than reflect realistic timelines.
 
-Techniques: CASE WHEN, ::date subtraction,::numeric cast, percentage calculation, NULL filtering
+Techniques: CASE WHEN,::date subtraction,::numeric cast,percentage calculation,NULL filtering
 
 [Full query](/queries/query4.sql)
 
@@ -87,9 +83,9 @@ Techniques: CASE WHEN, ::date subtraction,::numeric cast, percentage calculation
 
 ### Q5: REVENUE BY PRODUCT CATEGORY 
 
-Beauty/health (`beleza_saude`) leads revenue at **R$1.25M** although its not the not  the highest volume category. Watches/gifts (`relogios_presentes`) has the highest avg price at **R$200** but lower order volume. Most ordered category bed/bath (`cama_mesa_banho`) only ranks 3rd in revenue, this shows that volume and revenue rankings do not align.
+Beauty/health (`beleza_saude`) leads revenue at **R$1.25M** although its not the highest volume category. Watches/gifts (`relogios_presentes`) has the highest avg price at **R$200** but lower order volume. Most ordered category bed/bath (`cama_mesa_banho`) only ranks 3rd in revenue, this shows that volume and revenue rankings do not align.
 
-Techniques: COALESCE, COUNT DISTINCT, SUM, AVG, GROUP BY, LIMIT
+Techniques: COALESCE,COUNT DISTINCT,SUM,AVG, GROUP BY,LIMIT
 
 [Full query](/queries/query5.sql)
 
@@ -97,10 +93,9 @@ Techniques: COALESCE, COUNT DISTINCT, SUM, AVG, GROUP BY, LIMIT
 
 ### Q6: CUSTOMER RETENTION
 
-**97%** of customers purchase only once, repeat buyers are very rare.
-I think that this indicates a big retention problem; almost all revenue depends on acquiring new customers instead of returning ones.
+**97%** of customers purchase only once, repeat buyers are rare. For a marketplace this is rough, it meanss almost all revenue depens on new customer acquistion rather than retained spend. Either retention is broken, or olist is functioning more as an initial lead for sellers and then doing business outside of Olist.
 
-Techniques: CTE, CASE WHEN, COUNT DISTINCT, window function OVER()
+Techniques: CTE,CASE WHEN,COUNT DISTINCT,window function OVER()
 
 [Full query](/queries/query6.sql)
 
@@ -108,10 +103,9 @@ Techniques: CTE, CASE WHEN, COUNT DISTINCT, window function OVER()
 
 ### Q7: PAYMENT BEHAVIOUR
 
-Credit card accounts for **75%** of orders at an avg order value of **R$163**.
-Boleto (Brazil's cash-based bank slip) represents **19%**, it shows that there is a large unbanked customer group. Voucher users spend less than half the avg credit card order (**R$65 vs R$163**), I notice a pattern of discount driven behaviour instead of demand.
+Credit card accounts for **75%** of orders at an average order value of **R$163**. Boleto (cash-based bank slip) represents **19%**, it shows that there is a large unbanked customer group. Voucher users spend less than half the average credit card order (**R$65 vs R$163**), There is a pattern of discount driven behaviour instead of demand.
 
-Techniques: COUNT DISTINCT, window function OVER(), AVG, SUM, GROUP BY
+Techniques: COUNT DISTINCT,window function OVER(),AVG,SUM,GROUP BY
 
 [Full query](/queries/query7.sql)
 
@@ -119,8 +113,9 @@ Techniques: COUNT DISTINCT, window function OVER(), AVG, SUM, GROUP BY
 
 ### Q8: FREIGHT COST VS DELIVERY PERFORMANCE
 
-Higher freight does not buy faster delivery, this means a possible geographic disadvantage.
-I found that orders in the **Very High tier (R$50+)** average **16.5 days** transit and a **10.7% late rate**,versus **5.8 days** and **6% late** for low cost orders. Expensive shipping is a tax on remote customers not a premium service.
+Higher freight does not buy faster delivery, orders in the **Very High tier (R$50+)** average **16.5 days** transit and a **10.7% late rate**,versus **5.8 days** and **6% late** for low cost orders. Expensive shipping is a geography tax on remote customers not a premium service.
+
+
 
 [Full query](/queries/query8.sql)
 
