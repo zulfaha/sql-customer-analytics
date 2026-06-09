@@ -45,6 +45,8 @@ São Paulo accounts for ~42% of all orders.
 The top 3 states (SP, RJ, MG) cover ~66% of orders this shows a significant concentration risk.
 Over-reliance on a single state is a factor that should be monitiored.
 
+Techniques: GROUP BY, COUNT,ROUND, OVER(), ORDER BY
+
 [Full query](/queries/query1.sql)
 
 ---
