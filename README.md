@@ -112,6 +112,11 @@ Orders in the **Very High tier (R$50+)** average **16.5 days** transit and a **1
 [Full query](/queries/query8.sql)
 
 ---
+### Files 
+
+[`analysis.pdf` — Full write-up with implications and limitations per query](/analysis/analysis.pdf)
+
+---
 
 ### Database Schema
 - [ER Diagram (PNG)](schema_diagram.png)
@@ -122,5 +127,5 @@ Orders in the **Very High tier (R$50+)** average **16.5 days** transit and a **1
 ## Status
 - [x] Schema design
 - [x] Data loading 
-- [x] Query writing (in progress)
-- [ ] Analysis and insights
+- [x] Query writing 
+- [x] Analysis and insights (in progress)
