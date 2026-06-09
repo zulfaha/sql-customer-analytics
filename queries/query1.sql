@@ -1,6 +1,6 @@
    
 -- Query 1: Customer Distribution by State
--- Business Question: Which states drive the most orders and revenue?
+-- Business Question: Are we too dependent on one region?
 -- Tables: orders,customers, payments,
 -- Techniques: GROUP BY, COUNT,ROUND, OVER(), ORDER BY
 
