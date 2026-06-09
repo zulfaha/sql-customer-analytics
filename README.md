@@ -79,6 +79,8 @@ Techniques: DATE subtraction (::date),::numeric cast, AVG/MIN/MAX, GROUP BY, NUL
 
 **20+ states show **100% on-time rates**, with deliveries arriving **20–46 days earlier** than the promised date. It seems Olist deliberately delays estimates to protect satisfaction scores rather than reflect realistic timelines.
 
+Techniques: CASE WHEN, ::date subtraction,::numeric cast, percentage calculation, NULL filtering
+
 [Full query](/queries/query4.sql)
 
 ---
