@@ -111,6 +111,8 @@ Techniques: CTE, CASE WHEN, COUNT DISTINCT, window function OVER()
 Credit card accounts for **75%** of orders at an avg order value of **R$163**.
 Boleto (Brazil's cash-based bank slip) represents **19%**, it shows that there is a large unbanked customer group. Voucher users spend less than half the avg credit card order (**R$65 vs R$163**), I notice a pattern of discount driven behaviour instead of demand.
 
+Techniques: COUNT DISTINCT, window function OVER(), AVG, SUM, GROUP BY
+
 [Full query](/queries/query7.sql)
 
 ---
