@@ -89,6 +89,8 @@ Techniques: CASE WHEN, ::date subtraction,::numeric cast, percentage calculation
 
 Beauty/health (`beleza_saude`) leads revenue at **R$1.25M** although its not the not  the highest volume category. Watches/gifts (`relogios_presentes`) has the highest avg price at **R$200** but lower order volume. Most ordered category bed/bath (`cama_mesa_banho`) only ranks 3rd in revenue, this shows that volume and revenue rankings do not align.
 
+Techniques: COALESCE, COUNT DISTINCT, SUM, AVG, GROUP BY, LIMIT
+
 [Full query](/queries/query5.sql)
 
 ---
