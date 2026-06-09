@@ -1,7 +1,7 @@
 -- Query 8: Freight Cost vs Delivery Performance
 -- Business Question: Do higher freight costs correlate with worse delivery times?
 -- Tables: orders, order_items
--- Techniques: CASE WHEN, ::date subtraction, ::numeric cast, conditional COUNT (late_pct), GROUP BY
+-- Techniques: CASE WHEN,::date subtraction,::numeric cast,conditional COUNT(late_pct),GROUP BY
 -- Notes: No CTE needed, CASE reads raw freight_value directly (no pre-aggregation)
 --        carrier_date and customer_date swapped vs dataset naming due to mislabelling
 --        confirmed in Query 3. carrier_date = actual delivery, customer_date = pickup.
