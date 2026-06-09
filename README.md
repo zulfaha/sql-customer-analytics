@@ -104,7 +104,12 @@ Boleto (Brazil's cash-based bank slip) represents **19%**, this shows a signific
 
 ---
 
+### Q8: FREIGHT COST VS DELIVERY PERFORMANCE
 
+Finding: Higher freight does not buy faster delivery, it implies geographic disadvantage.
+Orders in the **Very High tier (R$50+)** average **16.5 days** transit and a **10.7% late rate**,vs **5.8 days** and **6% late** for low-cost orders. Expensive shipping is a tax on remote customers, not a premium service.
+
+[Full query](/queries/query8.sql)
 
 ---
 
