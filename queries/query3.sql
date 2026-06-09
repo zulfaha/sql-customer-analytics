@@ -1,7 +1,7 @@
 -- Query 3: Delivery Performance by State
--- Business Question: Which states have the longest transit times and highest freight costs?
+-- Business Question: Which states get slow,expensive delivery?
 -- Tables: orders, customers, order_items
--- Techniques: DATE subtraction (::date),::numeric cast, AVG/MIN/MAX, GROUP BY, NULL filtering
+-- Techniques: DATE subtraction (::date),::numeric cast,AVG/MIN/MAX,GROUP BY, NULL filtering
 -- Notes: Columns cast to ::date because they are stored as timestamps in PostgreSQL
 --        ::numeric cast required for ROUND() to accept AVG output in PostgreSQL
 
