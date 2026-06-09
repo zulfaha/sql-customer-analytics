@@ -115,7 +115,7 @@ Techniques: COUNT DISTINCT,window function OVER(),AVG,SUM,GROUP BY
 
 Higher freight does not buy faster delivery, orders in the **Very High tier (R$50+)** average **16.5 days** transit and a **10.7% late rate**,versus **5.8 days** and **6% late** for low cost orders. Expensive shipping is a geography tax on remote customers not a premium service.
 
-
+Techniques: CASE WHEN,::date subtraction,::numeric cast,conditional COUNT(late_pct),GROUP BY
 
 [Full query](/queries/query8.sql)
 
