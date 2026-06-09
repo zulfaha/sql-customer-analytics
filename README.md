@@ -100,6 +100,8 @@ Techniques: COALESCE, COUNT DISTINCT, SUM, AVG, GROUP BY, LIMIT
 **97%** of customers purchase only once, repeat buyers are very rare.
 I think that this indicates a big retention problem; almost all revenue depends on acquiring new customers instead of returning ones.
 
+Techniques: CTE, CASE WHEN, COUNT DISTINCT, window function OVER()
+
 [Full query](/queries/query6.sql)
 
 --- 
