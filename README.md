@@ -3,7 +3,7 @@
 
 ## 1. Summary
 
-An exploratory SQL analysis of 99,000+ real Brazilian e-commerce orders [from the Olist public dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). The goal was to answer practical business questions a data analyst might actually be asked, covering customer geography, operations, logistics, revenue, and retention.
+An exploratory SQL analysis of 99,000+ real Brazilian e-commerce orders [from the Olist public dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). My goal was to answer practical business questions a data analyst might actually be asked, covering customer geography, operations, logistics, revenue, and retention.
 
 All queries are written in PostgreSQL.
 
@@ -30,7 +30,7 @@ The dataset covers orders placed on the Olist platform between 2016 and 2018. It
 
 ---
 ## 3. Methodology
-PostgreSQL 18 database with 5 normalized tables, designed in pgAdmin 4, 
+PostgreSQL database with 5 normalized tables, designed in pgAdmin 4, 
 queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagram](schema_diagram.png)
 
 ---
@@ -41,9 +41,9 @@ queried with SQL (JOINs, CTEs, window functions). [Schema](schema.sql) | [Diagra
 ### Q1: MARKET CONCENTRATION
 Which states drive the most orders and revenue?
 
-FINDING: São Paulo alone accounts for ~42% of all orders.
-The top 3 states (SP, RJ, MG) cover ~66% of volume — significant concentration risk.
-Risk flag: over-reliance on a single state.
+FINDING: São Paulo accounts for ~42% of all orders.
+The top 3 states (SP, RJ, MG) cover ~66% of orders this shows a significant concentration risk.
+Over-reliance on a single state is a factor that should be monitiored.
 
 [Full query](/queries/query1.sql)
 
@@ -98,7 +98,7 @@ This implies a significant retention problem; almost all revenue depends on acqu
 ### Q7: PAYMENT BEHAVIOUR
 
 Finding: Credit card accounts for **75%** of orders at an avg order value of **R$163**.
-Boleto (Brazil's cash-based bank slip) represents **19%**, this shows a significant unbanked customer group. Voucher users spend less than half the avg credit card order (**R$65 vs R$163**), implies discount driven behaviour instead of demand.
+Boleto (Brazil's cash-based bank slip) represents **19%**, this shows a significant unbanked customer group. Voucher users spend less than half the avg credit card order (**R$65 vs R$163**), I think this shows discount driven behaviour instead of demand.
 
 [Full query](/queries/query7.sql)
 
@@ -106,7 +106,7 @@ Boleto (Brazil's cash-based bank slip) represents **19%**, this shows a signific
 
 ### Q8: FREIGHT COST VS DELIVERY PERFORMANCE
 
-Finding: Higher freight does not buy faster delivery, it implies geographic disadvantage.
+Finding: Higher freight does not buy faster delivery, this means a possible geographic disadvantage.
 Orders in the **Very High tier (R$50+)** average **16.5 days** transit and a **10.7% late rate**,vs **5.8 days** and **6% late** for low-cost orders. Expensive shipping is a tax on remote customers, not a premium service.
 
 [Full query](/queries/query8.sql)
