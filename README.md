@@ -2,12 +2,16 @@
 # SQL Customer Analytics: Brazilian E-Commerce
 
 ## 1. Summary
-An exploratory SQL analysis of 99,000+ real Brazilian e-commerce orders from the Olist public dataset on Kaggle. The goal was to answer practical business questions a data analyst might actually be asked, covering customer geography, operations, logistics, revenue, and retention.
+
+An exploratory SQL analysis of 99,000+ real Brazilian e-commerce orders [from the Olist public dataset on Kaggle](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce). The goal was to answer practical business questions a data analyst might actually be asked, covering customer geography, operations, logistics, revenue, and retention.
+
 All queries are written in PostgreSQL.
-[Appendix](#appendix) and [SQL files](/queries/).
+
+---
 
 ## Dataset
-Source: [Kaggle - Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
+
+The dataset covers orders placed on the Olist platform between 2016 and 2018. It includes customer location, order status, delivery timestamps, product categories, freight costs, and payment details across five tables: `orders`, `customers`, `order_items`, `payments`, and `products`.
 
 ---
 
