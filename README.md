@@ -69,6 +69,8 @@ SP averages **8 days** transit at **R$15** freight
 Northern states (RR, AP, AM) average **26+ days** at **R$35–43** freight
 The same northern states from Finding 1 had the lowest orders, long delivery times and high freight costs which are likely lowering demand. 
 
+Techniques: DATE subtraction (::date),::numeric cast, AVG/MIN/MAX, GROUP BY, NULL filtering
+
 [Full query](/queries/query3.sql)
 
 ---
