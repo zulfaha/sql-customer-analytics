@@ -89,17 +89,6 @@ This implies a significant retention problem; almost all revenue depends on acqu
 
 [Full query](/queries/query6.sql)
 
----
-
-## 5. Recommendations
-
----
-
-## 6. Limitations of This Analysis
-
----
-
-## Appendix: Technical Documentation
 
 ---
 
