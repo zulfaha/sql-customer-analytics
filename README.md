@@ -122,7 +122,7 @@ Techniques: CASE WHEN,::date subtraction,::numeric cast,conditional COUNT(late_p
 ---
 ### Files 
 
-[`analysis.pdf` — Full write-up with implications and limitations per query](/analysis/analysis.pdf)
+[`analysis.pdf`](analysis.pdf) — Full write-up with implications and limitations per query
 
 ---
 
@@ -136,4 +136,4 @@ Techniques: CASE WHEN,::date subtraction,::numeric cast,conditional COUNT(late_p
 - [x] Schema design
 - [x] Data loading 
 - [x] Query writing 
-- [x] Analysis and insights (in progress)
+- [x] Analysis and insights 
