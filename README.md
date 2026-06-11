@@ -27,7 +27,7 @@ Orders placed on the Olist platform between 2016 and 2018. It includes customer 
 5. **Revenue drivers:** Which product categories actually make money?
 6. **Customer loyalty:** Do customers come back?
 7. **Payment Behaviour:** How are customers choosing to pay, and does the method tell us anything about order value?
-8. **Logistics Cost vs Delivery Reliability:** Does expensive shipping actually arrive faster?
+8. **Freight vs Speed:** Does expensive shipping actually arrive faster?
 
 ---
 ## 3. Methodology
