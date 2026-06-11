@@ -62,8 +62,7 @@ Techniques: GROUP BY,COUNT,ORDER BY,OVER()
 
 ### Q3: DELIVERY PERFORMANCE
 
-SP averages **8 days** transit at **R$15** freight. Northern states (RR, AP, AM) average **26+ days** at **R$35–43** freight
-Same northern states from query 1 had the lowest orders, long delivery times and high freight costs are likely lowering demand. 
+SP averages **8 days** transit at **R$15** freight. Northern states (RR, AP, AM) average **26+ days** at **R$35–43** freight. The same northern states from query 1 had the lowest orders, long delivery times and high freight costs are likely lowering demand. 
 
 Techniques: DATE subtraction(::date),::numeric cast,AVG/MIN/MAX,GROUP BY,NULL filtering
 
@@ -93,7 +92,7 @@ Techniques: COALESCE,COUNT DISTINCT,SUM,AVG, GROUP BY,LIMIT
 
 ### Q6: CUSTOMER RETENTION
 
-**97%** of customers purchase only once, repeat buyers are rare. For a marketplace this is rough, it meanss almost all revenue depens on new customer acquistion rather than retained spend. Either retention is broken, or olist is functioning more as an initial lead for sellers and then doing business outside of Olist.
+**97%** of customers purchase only once, repeat buyers are rare. For a marketplace this is rough, it means almost all revenue depends on new customer acquistion rather than retained customers. Either retention is broken, or olist is functioning more as an initial lead for sellers.
 
 Techniques: CTE,CASE WHEN,COUNT DISTINCT,window function OVER()
 
