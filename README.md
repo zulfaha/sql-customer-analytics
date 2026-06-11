@@ -37,7 +37,7 @@ PostgreSQL in pgAdmin 4, 5 normalized tables, queried with SQL (JOINs, CTEs, win
 ---
 
 ## 4. Key Findings
-> Full analysis, implications, and limitations in `analysis.pdf`
+> Full analysis, implications, and limitations in [`analysis.pdf`](analysis.pdf)
 
 ### Q1: MARKET CONCENTRATION
 
